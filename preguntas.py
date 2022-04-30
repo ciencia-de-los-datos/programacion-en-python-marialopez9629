@@ -44,7 +44,10 @@ def pregunta_02():
     ]
 
     """
-    return
+    letras=['A','B','C','D','E']
+    cantidad={letter:sum(1 for z in x if z[0]==letter) for letter in letras}
+      
+    return dic
 
 
 def pregunta_03():
