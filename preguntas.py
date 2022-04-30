@@ -118,8 +118,7 @@ def pregunta_05():
 
     """
     letras=['A','B','C','D','E']
-    lista=[(letra,max(z[1] for z in x if z[0]==letra),min(z[1] for z in x if z[0]==letra)) for letra in letras]
-    
+    lista=[(letra,int(max(z[1] for z in x if z[0]==letra)),int(min(z[1] for z in x if z[0]==letra))) for letra in letras]
     return lista
 
 
