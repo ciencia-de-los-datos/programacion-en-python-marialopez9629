@@ -47,7 +47,7 @@ def pregunta_02():
     letras=['A','B','C','D','E']
     cantidad={letter:sum(1 for z in x if z[0]==letter) for letter in letras}
       
-    return dic
+    return cantidad
 
 
 def pregunta_03():
@@ -118,14 +118,7 @@ def pregunta_05():
 
     """
     letras=['A','B','C','D','E']
-    lista=[
-        (
-            letra,
-            max(z[1] for z in x if z[0]==letra),
-            min(z[1] for z in x if z[0]==letra))
-        for letra in letras
-         ]
-    
+    lista=[(letra,max(z[1] for z in x if z[0]==letra),min(z[1] for z in x if z[0]==letra)) for letra in letras]
     
     return lista
 
