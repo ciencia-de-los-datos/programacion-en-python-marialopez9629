@@ -45,7 +45,7 @@ def pregunta_02():
 
     """
     letras=['A','B','C','D','E']
-    cantidad={letter:sum(1 for z in x if z[0]==letter) for letter in letras}
+    cantidad=[(letter,sum(1 for z in x if z[0]==letter)) for letter in letras]
       
     return cantidad
 
@@ -245,13 +245,7 @@ def pregunta_09():
         z[4].split(",")[i] for z in x for i in range(len(z[4].split(","))) 
     ]
 
-    lista2=[
-        (
-            codigo,
-            sum(1 for z in lista if z.split(":")[0]==codigo)
-        )
-        for codigo  in codigos
-    ]
+    lista2={codigo:sum(1 for z in lista if z.split(":")[0]==codigo) for codigo  in codigos}
     
     return lista2
 
