@@ -9,9 +9,11 @@ básicas.
 
 Utilice el archivo `data.csv` para resolver las preguntas.
 
-1
 """
-
+x = open("data.csv", "r").readlines()
+x=[z.replace("\n","") for z in x]
+x=[z.replace("\t"," ") for z in x]
+x=[z.split(" ") for z in x]
 
 def pregunta_01():
     """
@@ -21,7 +23,10 @@ def pregunta_01():
     214
 
     """
-    return
+    lista=[int(z[1]) for z in x]
+    resultado=sum(lista)
+    
+    return resultado
 
 
 def pregunta_02():
