@@ -184,7 +184,7 @@ def pregunta_07():
 
     """
     values=set(z[1] for z in x)
-    lista=[(value,list(z[0] for z in x if z[1]==value)) for value in values]
+    lista=[(int(value),list(z[0] for z in x if z[1]==value)) for value in values]
     lista2=sorted(lista)
     
     return lista2
@@ -213,7 +213,7 @@ def pregunta_08():
 
     """
     values=set(z[1] for z in x)
-    lista=[(value,sorted(list(set(z[0] for z in x if z[1]==value)))) for value in values]
+    lista=[(int(value),sorted(list(set(z[0] for z in x if z[1]==value)))) for value in values]
     lista2=sorted(lista)
     
     return lista2
