@@ -117,7 +117,17 @@ def pregunta_05():
     ]
 
     """
-    return
+    letras=['A','B','C','D','E']
+    lista=[
+        (
+            letra,
+            max(z[1] for z in x if z[0]==letra),
+            min(z[1] for z in x if z[0]==letra))
+        for letra in letras
+         ]
+    
+    
+    return lista
 
 
 def pregunta_06():
@@ -142,7 +152,21 @@ def pregunta_06():
     ]
 
     """
-    return
+    
+    codigos=['aaa','bbb','ccc','ddd','eee','fff','ggg','hhh','iii','jjj']
+
+    lista=[    
+        z[4].split(",")[i] for z in x for i in range(len(z[4].split(","))) 
+    ]
+
+    lista2=[
+        (codigo,
+         min(int(z.split(":")[1]) for z in lista if z.split(":")[0]==codigo),
+         max(int(z.split(":")[1]) for z in lista if z.split(":")[0]==codigo))
+         for codigo  in codigos
+         ]
+    
+    return lista2
 
 
 def pregunta_07():
@@ -166,7 +190,11 @@ def pregunta_07():
     ]
 
     """
-    return
+    values=set(z[1] for z in x)
+    lista=[(value,list(z[0] for z in x if z[1]==value)) for value in values]
+    lista2=sorted(lista)
+    
+    return lista2
 
 
 def pregunta_08():
@@ -191,7 +219,11 @@ def pregunta_08():
     ]
 
     """
-    return
+    values=set(z[1] for z in x)
+    lista=[(value,sorted(list(set(z[0] for z in x if z[1]==value)))) for value in values]
+    lista2=sorted(lista)
+    
+    return lista2
 
 
 def pregunta_09():
@@ -214,7 +246,21 @@ def pregunta_09():
     }
 
     """
-    return
+    codigos=['aaa','bbb','ccc','ddd','eee','fff','ggg','hhh','iii','jjj']
+
+    lista=[    
+        z[4].split(",")[i] for z in x for i in range(len(z[4].split(","))) 
+    ]
+
+    lista2=[
+        (
+            codigo,
+            sum(1 for z in lista if z.split(":")[0]==codigo)
+        )
+        for codigo  in codigos
+    ]
+    
+    return lista2
 
 
 def pregunta_10():
@@ -235,7 +281,9 @@ def pregunta_10():
 
 
     """
-    return
+    lista=[(z[0],len(z[3].split(",")),len(z[4].split(","))) for z in x]
+    
+    return lista
 
 
 def pregunta_11():
@@ -256,7 +304,13 @@ def pregunta_11():
 
 
     """
-    return
+    letras=set(z[3].split(",")[i] for z in x for i in range(len(z[3].split(","))))
+    tuplas=[(z[3].split(",")[i],z[1]) for z in x for i in range(len(z[3].split(",")))]
+    lista=[(letra,sum(int(tupla[1]) for tupla in tuplas if tupla[0]==letra)) for letra in letras]
+    lista=sorted(lista)
+    direc=dict(lista)
+    
+    return direc
 
 
 def pregunta_12():
@@ -274,4 +328,11 @@ def pregunta_12():
     }
 
     """
-    return
+    letras=set(z[0].split(",")[i] for z in x for i in range(len(z[0].split(","))))
+    tuplas=[(z[0],z[4].split(",")[i]) for z in x for i in range(len(z[4].split(",")))]
+    lista1=[(tupla[0],tupla[1].split(":")[1]) for tupla in tuplas]
+    lista2=[(letra,sum(int(tupla[1]) for tupla in lista1 if tupla[0]==letra)) for letra in letras]
+    lista2=sorted(lista2)
+    direc=dict(lista2)
+    
+    return direc
