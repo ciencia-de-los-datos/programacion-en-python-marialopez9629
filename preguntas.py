@@ -93,7 +93,13 @@ def pregunta_04():
     ]
 
     """
-    return
+    from collections import Counter
+    lista=[(z[2].split("-"))[1] for z in x]
+    dicc=Counter(lista)
+    result=[(key,value) for key, value in dicc.items()]
+    result=sorted(result)
+    
+    return result
 
 
 def pregunta_05():
