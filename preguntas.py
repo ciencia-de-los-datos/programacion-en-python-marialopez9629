@@ -65,7 +65,10 @@ def pregunta_03():
     ]
 
     """
-    return
+    letras=['A','B','C','D','E']
+    cantidad=[(letter,sum(int(z[1]) for z in x if z[0]==letter)) for letter in letras]
+    
+    return cantidad
 
 
 def pregunta_04():
